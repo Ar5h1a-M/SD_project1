@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css"> <!--/ tells html to look in public folder for any file called style.css -->
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <h4>Node Project</h4>
+        <ul>
+            <li><a href="/">About Us</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/sign_up">Sign Up</a></li>
+        </ul>
+    </nav>
+    <main class = "main-container">
+        <article class="card">
+            <section class="card-container">
+                <h2 class="card-title" >Sign Up</h2>
+            
+                <form action="/auth/sign_up" method="POST" class="signup-form">
+                    <label for="name">Userame</label>
+                    <input type="text" id="Username" name="name" required />
+                
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required />
+                
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required />
+
+                    <label for="Confirmpassword">Confirm Password</label>
+                    <input type="password" id="Confirmpassword" name="Confirmpassword" required />
+                
+                    <button type="submit" class="card-btn">Create Account</button>
+                </form>
+                {{#if message}}
+                    <h4 class="custom-alert error-alert ">{{message}}</h4>
+                {{/if}}
+                {{#if message_sign}}
+                    <h4 class="custom-alert info-alert ">{{message_sign}}</h4>
+                {{/if}}
+            </section>
+
+        </article> 
+
+    </main>
+</body>
+</html>
